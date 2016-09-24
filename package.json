@@ -1,7 +1,7 @@
 {
   "name": "starter-kit",
   "version": "1.0.0",
-  "description": "UENO. starter kit",
+  "description": "React starter kit with redux and universal rendering",
   "engines": {
     "node": ">=6.0 <7",
     "npm": ">=3.8 <4"
@@ -27,14 +27,17 @@
     "react",
     "webpack",
     "starter-kit",
-    "universal"
+    "universal",
+    "eslint",
+    "live-reload",
+    "redux"
   ],
   "author": "Snær Seljan Þóroddsson",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ueno-llc/starter-kit/issues"
+    "url": "https://github.com/snaerth/react-redux-universal-starter-kit/issues"
   },
-  "homepage": "https://github.com/ueno-llc/starter-kit#readme",
+  "homepage": "https://github.com/snaerth/react-redux-universal-starter-kit",
   "dependencies": {
     "autoprefixer": "^6.4.1",
     "babel-core": "^6.14.0",
