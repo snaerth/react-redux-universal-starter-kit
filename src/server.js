@@ -106,7 +106,6 @@ server.listen(port, err => {
   if (err) {
     throw err;
   } else {
-    open(`http://localhost:${port}`);
     debug(color.cyan('http'), `🚀  started on port ${port}`);
   }
 });

@@ -5,10 +5,12 @@
     "plugin:import/warnings"
   ],
   "plugins": [
-    "react"
+    "react",
+    "import"
   ],
   "settings": {
-    "import/resolver": "webpack"
+    "ecmascript": 6,
+    "import/parser": "webpack"
   },
   "parserOptions": {
     "ecmaVersion": 6,

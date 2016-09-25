@@ -10,7 +10,6 @@ const proxyMiddleware = require('http-proxy-middleware');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 
-
 log('starting dev server');
 
 const config = require('./server');

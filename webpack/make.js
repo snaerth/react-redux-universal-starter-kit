@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const NODE_ENV = process.env.NODE_ENV;
 
@@ -26,7 +27,7 @@ const NODE_ENV = process.env.NODE_ENV;
  *
  * ### `eslint`
  * Enable or disable eslinting of the javascript on runtime. Only in debug mode.
-**/
+ **/
 module.exports = function make(options) {
 
   const isRelease = (NODE_ENV === 'production');
@@ -57,16 +58,21 @@ module.exports = function make(options) {
       'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
     }),
     new webpack.NoErrorsPlugin(),
+    new StyleLintPlugin({
+      configFile: '.stylelintrc',
+      files: '**/*.l?(e|c)ss',
+      failOnError: false,
+    })
   ];
 
   // Styles loader
   const loader = {
-    css: 'css-loader?modules&importLoaders=1'
-      + '&localIdentName=[name]_[local]_[hash:base64:5]!postcss-loader',
+    css: 'css-loader?modules&importLoaders=1' +
+      '&localIdentName=[name]_[local]_[hash:base64:5]!postcss-loader',
 
-    babel: 'babel-loader?presets[]=react&presets[]=es2015'
-      + `&presets[]=stage-0${isHot ? '&presets[]=react-hmre' : ''}`
-      + '&plugins[]=transform-decorators-legacy',
+    babel: 'babel-loader?presets[]=react&presets[]=es2015' +
+      `&presets[]=stage-0${isHot ? '&presets[]=react-hmre' : ''}` +
+      '&plugins[]=transform-decorators-legacy',
   };
 
   // Hot Loading
