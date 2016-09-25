@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 
 class MoviePage extends Component {
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    render() {
-        return (
+  render() {
+    return (
             <div>
                 <h1>MoviePage</h1>
             </div>
         );
-    }
+  }
 }
 
 export default MoviePage;

@@ -7,8 +7,8 @@ import MoviePage from './components/movie/MoviePage';
 import NotFoundPage from './components/notfound/NotFoundPage';
 
 export {
-  NotFoundPage
-}; 
+  NotFoundPage,
+};
 
 export default (
   <Route path="/" component={App}>

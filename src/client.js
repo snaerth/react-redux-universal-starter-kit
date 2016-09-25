@@ -1,4 +1,4 @@
-/*eslint-disable import/default */
+/* eslint-disable import/default */
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -12,7 +12,7 @@ const store = configureStore(initialState);
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={browserHistory} routes={routes} onUpdate={window.scrollTo(0, 0)}/>
+    <Router history={browserHistory} routes={routes} onUpdate={window.scrollTo(0, 0)} />
   </Provider>,
   document.getElementById('app')
 );

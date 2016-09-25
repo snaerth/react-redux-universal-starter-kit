@@ -2,8 +2,7 @@
 import http from 'http';
 import express from 'express';
 import compression from 'compression';
-import open from 'open';
-import request from 'request';
+
 
 import React from 'react';
 import { renderToString } from 'react-dom/server';
@@ -52,7 +51,6 @@ app.get('*', (req, res) => {
 				// Create a new Redux store instance
 				const store = configureStore({ movies: data });
 				// Grab the initial state from our Redux store
-				const preloadedState = store.getState();
 				const initialState = JSON.stringify(store.getState());
         const head = Helmet.rewind();
 				// Render the component to a string
@@ -78,7 +76,7 @@ app.get('*', (req, res) => {
   });
 });
 
-function fetchMovies(url) {
+function fetchMovies() {
 	return new Promise((resolve, reject) => {
 		resolve(require('../src/data/movies0.json'));
 		// const requestOptions = {

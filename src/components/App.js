@@ -4,9 +4,9 @@ import Header from '../components/common/header/Header';
 
 class App extends Component {
   render() {
-      return (
+    return (
         <div>
-            <Header/>
+            <Header />
             {this.props.children}
         </div>
       );
@@ -14,7 +14,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-    children : PropTypes.object.isRequired
+  children: PropTypes.object.isRequired,
 };
 
 export default App;
