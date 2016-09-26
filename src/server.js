@@ -2,8 +2,6 @@
 import http from 'http';
 import express from 'express';
 import compression from 'compression';
-
-
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { Router, RouterContext, match } from 'react-router';
@@ -69,9 +67,10 @@ app.get('*', (req, res) => {
           meta: head.meta.toString(),
           link: head.link.toString(),
         });
+        
 			})
 			.catch((error) => {
-				console.log(error);
+				debug(color.red('Error: '), error);
 			});
   });
 });

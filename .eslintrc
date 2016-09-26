@@ -6,7 +6,8 @@
     "plugin:import/warnings"
   ],
   "plugins": [
-    "react"
+    "react",
+    "import"
   ],
   "parserOptions": {
     "ecmaVersion": 6,
@@ -16,6 +17,12 @@
       "experimentalObjectRestSpread": true
     }
   },
+  "settings": {
+    "import/ignore": [
+      "node_modules",
+      ".(less|css)$"
+    ]
+  },
   "env": {
     "es6": true,
     "browser": true,
@@ -24,19 +31,45 @@
     "mocha": true
   },
   "rules": {
+    "import/no-unresolved": [
+      2,
+      {
+        "commonjs": true,
+        "amd": true
+      }
+    ],
+    "import/named": 2,
+    "import/namespace": 2,
+    "import/default": 2,
+    "import/export": 2,
     "quotes": 0,
     "no-console": 1,
     "no-debugger": 1,
     "no-var": 1,
-    "semi": [1, "always"],
+    "semi": [
+      1,
+      "always"
+    ],
     "no-trailing-spaces": 0,
     "eol-last": 0,
     "no-underscore-dangle": 0,
     "no-alert": 0,
     "no-lone-blocks": 0,
     "jsx-quotes": 1,
-    "react/display-name": [ 1, {"ignoreTranspilerName": false }],
-    "react/forbid-prop-types": [1, {"forbid": ["any"]}],
+    "react/display-name": [
+      1,
+      {
+        "ignoreTranspilerName": false
+      }
+    ],
+    "react/forbid-prop-types": [
+      1,
+      {
+        "forbid": [
+          "any"
+        ]
+      }
+    ],
     "react/jsx-boolean-value": 0,
     "react/jsx-closing-bracket-location": 0,
     "react/jsx-curly-spacing": 1,
@@ -62,11 +95,9 @@
     "react/prefer-es6-class": 1,
     "react/prop-types": 1,
     "react/react-in-jsx-scope": 1,
-    "react/require-extension": 1,
     "react/self-closing-comp": 1,
     "react/sort-comp": 1,
     "react/wrap-multilines": 1
   },
-  "globals": {
-  }
+  "globals": {}
 }
